@@ -14,16 +14,16 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="logo">
-                <h1>🚶 Yürüyüş & Bilinç Altı</h1>
+                <h1><span>Walk</span>Mind</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Ana Sayfa</a></li>
                 <li><a href="blog.html">Makaleler</a></li>
-                <li><a href="search.html">Arama</a></li>
-                <li><a href="about.html">Hakkında</a></li>
+                <li><a href="search.html">Keşfet</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
             </ul>
         </div>
     </nav>
@@ -31,37 +31,40 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Yürüyüş Şekliniz, Bilincinizi Anlatır</h2>
-            <p>Her insanın yürüyüş tarzı, onun kişiliği, duygusal durumu ve bilinç altı davranışlarının bir yansımasıdır.</p>
-            <a href="blog.html" class="btn btn-primary">Makaleleri Keşfet</a>
+            <h2>Adımlarınızda Saklı Kalan Gerçekler</h2>
+            <p>Bilinçaltının bedene yansıması olan yürüyüş şeklinizi analiz edin. Her adımın, psikolojik durumunuz ve kişiliğiniz hakkında anlattığı derin sırları keşfedin.</p>
+            <a href="blog.html" class="btn btn-primary">Yolculuğa Başla</a>
         </div>
     </section>
 
     <!-- Featured Articles -->
     <section class="featured">
         <div class="container">
-            <h2>Popüler Makaleler</h2>
+            <h2 class="section-title reveal">Öne Çıkan İncelemeler</h2>
             <div class="article-grid" id="featured-articles">
-                <!-- Placeholder Makaleler -->
-                <div class="article-card skeleton">
-                    <div style="background: #e0e0e0; height: 200px;"></div>
+                <!-- Placeholder Makaleler (JavaScript ile doldurulacak, skeleton loader olarak tasarlandı) -->
+                <div class="article-card skeleton reveal">
+                    <div class="img-wrapper"></div>
                     <div class="article-card-content">
-                        <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                        <p style="background: #e0e0e0; height: 60px;"></p>
+                        <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                        <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                        <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                     </div>
                 </div>
-                <div class="article-card skeleton">
-                    <div style="background: #e0e0e0; height: 200px;"></div>
+                <div class="article-card skeleton reveal">
+                    <div class="img-wrapper"></div>
                     <div class="article-card-content">
-                        <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                        <p style="background: #e0e0e0; height: 60px;"></p>
+                        <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                        <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                        <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                     </div>
                 </div>
-                <div class="article-card skeleton">
-                    <div style="background: #e0e0e0; height: 200px;"></div>
+                <div class="article-card skeleton reveal">
+                    <div class="img-wrapper"></div>
                     <div class="article-card-content">
-                        <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                        <p style="background: #e0e0e0; height: 60px;"></p>
+                        <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                        <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                        <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                     </div>
                 </div>
             </div>
@@ -71,20 +74,29 @@
     <!-- About Preview -->
     <section class="about-preview">
         <div class="container">
-            <h2>Bu Proje Nedir?</h2>
-            <p>Yürüyüş şekli psikoloji alanında uzun zamandır incelenen bir konudur. Adım atışından tutun duruşa, her detay kişiliğimiz hakkında bilgi verir. Burada, bilimsel araştırmalara dayalı olarak, yürüyüş tipleri ve bunların kişilik özellikleriyle ilişkisini keşfedeceksiniz.</p>
-            <a href="about.html" class="btn btn-secondary">Daha Fazla Bilgi</a>
+            <div class="glass-box reveal">
+                <h2>Bilinçaltı Analizi Nedir?</h2>
+                <p>Yürüyüş şekli, psikoloji alanında uzun zamandır incelenen bir konudur. Adım atış hızınızdan duruşunuza kadar her detay, içsel dünyanız hakkında zengin bilgiler sunar. Bu platformda, bilimsel araştırmalara dayalı olarak, beden dilinin en belirgin öğesi olan yürüyüşün sırlarını deşifre ediyoruz.</p>
+                <a href="about.html" class="btn btn-secondary">Platform Hakkında</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Yürüyüş & Bilinç Altı. Tüm hakları saklıdır.</p>
-            <div class="social-links">
-                <a href="#" class="social-icon" title="Twitter">𝕏</a>
-                <a href="#" class="social-icon" title="Facebook">f</a>
-                <a href="#" class="social-icon" title="LinkedIn">in</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Walk<span>Mind</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="LinkedIn">in</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 WalkMind - Bilinçaltı Analiz Platformu. Tüm hakları saklıdır.</p>
+                </div>
             </div>
         </div>
     </footer>

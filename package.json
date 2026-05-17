@@ -1,0 +1,12 @@
+{
+  "name": "yuruyus-ve-bilincalti",
+  "version": "1.0.0",
+  "description": "Yürüyüş ve Bilinç Altı Analizi web sitesi için Node.js sunucusu",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

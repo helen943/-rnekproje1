@@ -66,20 +66,25 @@ function renderArticles() {
         return;
     }
     
-    container.innerHTML = paginatedArticles.map(article => `
-        <div class="article-card">
-            <img src="${article.image}" alt="${article.title}">
+    container.innerHTML = paginatedArticles.map((article, index) => `
+        <div class="article-card reveal" style="animation-delay: ${index * 0.1}s">
+            <div class="img-wrapper">
+                <img src="${article.image}" alt="${article.title}">
+            </div>
             <div class="article-card-content">
+                <div class="meta">
+                    <span class="category">${article.category}</span>
+                    <span>${formatDate(article.date)}</span>
+                </div>
                 <h3>${article.title}</h3>
                 <p class="summary">${article.summary}</p>
-                <div class="meta">
-                    <span>${formatDate(article.date)}</span>
-                    <span class="category">${article.category}</span>
-                </div>
-                <a href="article.html?id=${article.id}">Devamını Oku →</a>
+                <a href="article.html?id=${article.id}" class="read-more">Devamını Oku</a>
             </div>
         </div>
     `).join('');
+    
+    // Trigger reveal for newly added elements
+    setTimeout(() => { if(typeof initRevealAnimations === 'function') initRevealAnimations(); }, 50);
 }
 
 // ==================== RENDER PAGINATION ====================
@@ -159,7 +164,9 @@ function loadArticlePage() {
     document.getElementById('article-author').textContent = article.author;
     document.getElementById('article-date').textContent = formatDate(article.date);
     document.getElementById('article-category').textContent = article.category;
-    document.getElementById('article-image').src = article.image;
+    const articleImage = document.getElementById('article-image');
+    articleImage.src = article.image;
+    articleImage.style.display = 'block'; // Make it visible after setting src
     document.getElementById('article-body').innerHTML = article.content;
     
     // Tags
@@ -198,19 +205,25 @@ function loadRelatedArticles(articleId, category) {
         return;
     }
     
-    container.innerHTML = related.map(article => `
-        <div class="article-card">
-            <img src="${article.image}" alt="${article.title}">
+    container.innerHTML = related.map((article, index) => `
+        <div class="article-card reveal" style="animation-delay: ${index * 0.1}s">
+            <div class="img-wrapper">
+                <img src="${article.image}" alt="${article.title}">
+            </div>
             <div class="article-card-content">
-                <h3>${article.title}</h3>
-                <p class="summary">${article.summary}</p>
                 <div class="meta">
+                    <span class="category">${article.category}</span>
                     <span>${formatDate(article.date)}</span>
                 </div>
-                <a href="article.html?id=${article.id}">Devamını Oku →</a>
+                <h3>${article.title}</h3>
+                <p class="summary">${article.summary}</p>
+                <a href="article.html?id=${article.id}" class="read-more">Devamını Oku</a>
             </div>
         </div>
     `).join('');
+    
+    // Trigger reveal for newly added elements
+    setTimeout(() => { if(typeof initRevealAnimations === 'function') initRevealAnimations(); }, 50);
 }
 
 // ==================== SEARCH BY TAG ====================

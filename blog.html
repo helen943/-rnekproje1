@@ -4,94 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Yürüyüş şekli ve bilinç altı ilişkisi hakkında makaleler.">
-    <title>Makaleler - Yürüyüş & Bilinç Altı</title>
+    <title>Makaleler - WalkMind</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="logo">
-                <h1>🚶 Yürüyüş & Bilinç Altı</h1>
+                <h1><span>Walk</span>Mind</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="blog.html" class="active">Makaleler</a></li>
-                <li><a href="search.html">Arama</a></li>
-                <li><a href="about.html">Hakkında</a></li>
+                <li><a href="search.html">Keşfet</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container">
-        <h1>Tüm Makaleler</h1>
+        <div class="article-header reveal">
+            <h1>Tüm İncelemeler</h1>
+            <div class="article-meta">
+                <span>Daha Derine İnin</span>
+            </div>
+        </div>
         
         <!-- Filter & Sort -->
-        <div class="filter-section">
+        <div class="filter-section reveal">
             <input 
                 type="text" 
                 id="filter-input" 
-                placeholder="Makale adı veya etiket ile ara..."
+                placeholder="İnceleme adı veya etiket ile ara..."
                 class="search-input"
             >
             <select id="sort-select" class="sort-select">
-                <option value="newest">En Yeni</option>
-                <option value="oldest">En Eski</option>
-                <option value="title">A-Z</option>
+                <option value="newest">En Yeni İncelemeler</option>
+                <option value="oldest">En Eski İncelemeler</option>
+                <option value="title">A'dan Z'ye</option>
             </select>
         </div>
 
         <!-- Articles Grid -->
         <div class="article-grid" id="articles-container">
             <!-- Placeholder Makaleler -->
-            <div class="article-card skeleton">
-                <div style="background: #e0e0e0; height: 200px;"></div>
+            <div class="article-card skeleton reveal">
+                <div class="img-wrapper"></div>
                 <div class="article-card-content">
-                    <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                    <p style="background: #e0e0e0; height: 60px;"></p>
+                    <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                    <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                    <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                 </div>
             </div>
-            <div class="article-card skeleton">
-                <div style="background: #e0e0e0; height: 200px;"></div>
+            <div class="article-card skeleton reveal">
+                <div class="img-wrapper"></div>
                 <div class="article-card-content">
-                    <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                    <p style="background: #e0e0e0; height: 60px;"></p>
+                    <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                    <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                    <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                 </div>
             </div>
-            <div class="article-card skeleton">
-                <div style="background: #e0e0e0; height: 200px;"></div>
+            <div class="article-card skeleton reveal">
+                <div class="img-wrapper"></div>
                 <div class="article-card-content">
-                    <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                    <p style="background: #e0e0e0; height: 60px;"></p>
+                    <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                    <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                    <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                 </div>
             </div>
-            <div class="article-card skeleton">
-                <div style="background: #e0e0e0; height: 200px;"></div>
+            <div class="article-card skeleton reveal">
+                <div class="img-wrapper"></div>
                 <div class="article-card-content">
-                    <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                    <p style="background: #e0e0e0; height: 60px;"></p>
+                    <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                    <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                    <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                 </div>
             </div>
-            <div class="article-card skeleton">
-                <div style="background: #e0e0e0; height: 200px;"></div>
+            <div class="article-card skeleton reveal">
+                <div class="img-wrapper"></div>
                 <div class="article-card-content">
-                    <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                    <p style="background: #e0e0e0; height: 60px;"></p>
+                    <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                    <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                    <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                 </div>
             </div>
-            <div class="article-card skeleton">
-                <div style="background: #e0e0e0; height: 200px;"></div>
+            <div class="article-card skeleton reveal">
+                <div class="img-wrapper"></div>
                 <div class="article-card-content">
-                    <h3 style="background: #e0e0e0; height: 1.3em; margin-bottom: 10px;"></h3>
-                    <p style="background: #e0e0e0; height: 60px;"></p>
+                    <div class="meta"><span style="width: 60px; height: 15px; background: rgba(255,255,255,0.05); display: inline-block;"></span></div>
+                    <h3 style="height: 24px; width: 80%; background: rgba(255,255,255,0.05); margin-bottom: 15px;"></h3>
+                    <p style="height: 60px; width: 100%; background: rgba(255,255,255,0.05);"></p>
                 </div>
             </div>
         </div>
 
         <!-- Pagination -->
-        <div class="pagination" id="pagination">
+        <div class="pagination" id="pagination" style="margin-top: 60px;">
             <!-- Dinamik olarak yüklenecek -->
         </div>
     </main>
@@ -99,11 +110,18 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Yürüyüş & Bilinç Altı. Tüm hakları saklıdır.</p>
-            <div class="social-links">
-                <a href="#" class="social-icon" title="Twitter">𝕏</a>
-                <a href="#" class="social-icon" title="Facebook">f</a>
-                <a href="#" class="social-icon" title="LinkedIn">in</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Walk<span>Mind</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="LinkedIn">in</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 WalkMind - Bilinçaltı Analiz Platformu. Tüm hakları saklıdır.</p>
+                </div>
             </div>
         </div>
     </footer>

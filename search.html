@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Yürüyüş ve bilinç altı makalelerinde arama yapın.">
-    <title>Arama - Yürüyüş & Bilinç Altı</title>
+    <title>Keşfet - WalkMind</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="logo">
-                <h1>🚶 Yürüyüş & Bilinç Altı</h1>
+                <h1><span>Walk</span>Mind</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="blog.html">Makaleler</a></li>
-                <li><a href="search.html" class="active">Arama</a></li>
-                <li><a href="about.html">Hakkında</a></li>
+                <li><a href="search.html" class="active">Keşfet</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container">
-        <h1>Makale Arama</h1>
+        <div class="article-header reveal">
+            <h1>Zihnini Keşfet</h1>
+            <div class="article-meta">
+                <span>Araştır ve Analiz Et</span>
+            </div>
+        </div>
         
         <!-- Search Form -->
-        <div class="search-section">
+        <div class="filter-section reveal" style="max-width: 800px; margin: 0 auto 40px; display: flex; gap: 15px; padding: 30px;">
             <input 
                 type="text" 
                 id="search-input" 
@@ -41,19 +46,28 @@
         </div>
 
         <!-- Search Results -->
-        <div id="search-results">
-            <p>Aramak için bir terim girin.</p>
+        <div id="search-results" class="article-grid reveal">
+            <div class="glass-box" style="width: 100%; grid-column: 1 / -1; padding: 40px; text-align: center;">
+                <p style="margin: 0; color: var(--text-muted);">Aramak için bir terim girin.</p>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Yürüyüş & Bilinç Altı. Tüm hakları saklıdır.</p>
-            <div class="social-links">
-                <a href="#" class="social-icon" title="Twitter">𝕏</a>
-                <a href="#" class="social-icon" title="Facebook">f</a>
-                <a href="#" class="social-icon" title="LinkedIn">in</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Walk<span>Mind</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="LinkedIn">in</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 WalkMind - Bilinçaltı Analiz Platformu. Tüm hakları saklıdır.</p>
+                </div>
             </div>
         </div>
     </footer>

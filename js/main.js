@@ -6,15 +6,55 @@ async function loadArticles() {
     try {
         const response = await fetch('data/articles.json');
         allArticles = await response.json();
-        console.log('✓ Makaleler yüklendi:', allArticles.length, 'makale');
+        console.log('✓ İncelemeler yüklendi:', allArticles.length, 'makale');
     } catch (error) {
-        console.error('Makaleler yüklenemedi:', error);
+        console.error('İncelemeler yüklenemedi:', error);
         allArticles = [];
+    }
+}
+
+// ==================== SCROLL REVEAL ANIMATIONS ====================
+function initRevealAnimations() {
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
+    
+    function checkReveal() {
+        reveals.forEach(reveal => {
+            const elementTop = reveal.getBoundingClientRect().top;
+            const elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkReveal);
+    checkReveal(); // Trigger on initial load
+}
+
+// ==================== NAVBAR SCROLL EFFECT ====================
+function initNavbarScroll() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Trigger on initial load in case page is loaded scrolled
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     }
 }
 
 // ==================== INITIALIZE ====================
 document.addEventListener('DOMContentLoaded', async () => {
+    initNavbarScroll();
+    
     await loadArticles();
     
     // Ana sayfada featured articles yükle
@@ -24,13 +64,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Blog sayfasını kontrol et
     if (document.querySelector('.article-grid#articles-container')) {
-        initBlogPage();
+        if(typeof initBlogPage === 'function') initBlogPage();
     }
     
     // Makale sayfasını kontrol et
     if (document.getElementById('article-content')) {
-        loadArticlePage();
+        if(typeof loadArticlePage === 'function') loadArticlePage();
     }
+    
+    // Initialize reveal animations after DOM is fully constructed
+    setTimeout(initRevealAnimations, 100);
 });
 
 // ==================== FEATURED ARTICLES ====================
@@ -41,27 +84,34 @@ function loadFeaturedArticles() {
     // İlk 3 makaleyi göster
     const featured = allArticles.slice(0, 3);
     
-    container.innerHTML = featured.map(article => `
-        <div class="article-card">
-            <img src="${article.image}" alt="${article.title}">
+    container.innerHTML = featured.map((article, index) => `
+        <div class="article-card reveal" style="animation-delay: ${index * 0.1}s">
+            <div class="img-wrapper">
+                <img src="${article.image}" alt="${article.title}">
+            </div>
             <div class="article-card-content">
+                <div class="meta">
+                    <span class="category">${article.category}</span>
+                    <span>${formatDate(article.date)}</span>
+                </div>
                 <h3>${article.title}</h3>
                 <p class="summary">${article.summary}</p>
-                <div class="meta">
-                    <span>${formatDate(article.date)}</span>
-                    <span class="category">${article.category}</span>
-                </div>
-                <a href="article.html?id=${article.id}">Devamını Oku →</a>
+                <a href="article.html?id=${article.id}" class="read-more">Devamını Oku</a>
             </div>
         </div>
     `).join('');
+    
+    // Trigger reveal for newly added elements
+    setTimeout(initRevealAnimations, 50);
 }
 
 // ==================== DATE FORMATTING ====================
 function formatDate(dateString) {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const date = new Date(dateString + 'T00:00:00');
-    return date.toLocaleDateString('tr-TR', options);
+    // Eğer tarih stringi zaten 'T' içeriyorsa doğrudan parse et, yoksa yerel gün başlangıcı ekle
+    const hasTime = dateString.includes('T');
+    const date = new Date(hasTime ? dateString : dateString + 'T00:00:00');
+    return isNaN(date.getTime()) ? 'Bilinmeyen Tarih' : date.toLocaleDateString('tr-TR', options);
 }
 
 // ==================== UTILITY: GET ARTICLE BY ID ====================
@@ -100,4 +150,4 @@ function shareOnSocial(platform, title, url) {
 }
 
 // ==================== CONSOLE GREETING ====================
-console.log('%c🚶 Yürüyüş & Bilinç Altı Sitesine Hoş Geldiniz', 'color: #3498db; font-size: 16px; font-weight: bold;');
+console.log('%c🚶 WalkMind Platformuna Hoş Geldiniz', 'color: #d4af37; font-size: 16px; font-weight: bold;');

@@ -3,64 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makale - Yürüyüş & Bilinç Altı</title>
+    <title>İnceleme - WalkMind</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="logo">
-                <h1>🚶 Yürüyüş & Bilinç Altı</h1>
+                <h1><span>Walk</span>Mind</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="blog.html">Makaleler</a></li>
-                <li><a href="search.html">Arama</a></li>
-                <li><a href="about.html">Hakkında</a></li>
+                <li><a href="search.html">Keşfet</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Article Content -->
     <main class="container">
-        <article id="article-content" class="article-page">
+        <article id="article-content" class="reveal">
             <header class="article-header">
-                <h1 id="article-title">Makale Başlığı</h1>
+                <h1 id="article-title">İnceleme Başlığı</h1>
                 <div class="article-meta">
-                    <span class="author" id="article-author">Yazar Adı</span>
+                    <span class="author" id="article-author">Uzman Adı</span>
                     <span class="date" id="article-date">01.01.2026</span>
                     <span class="category" id="article-category">Kategori</span>
                 </div>
-                <div class="tags" id="article-tags">
-                    <!-- Etiketler dinamik yüklenecek -->
-                </div>
             </header>
 
-            <img id="article-image" src="" alt="Makale kapak" class="article-image">
+            <img id="article-image" src="" alt="Kapak" class="article-image" style="display: none;">
 
-            <div id="article-body" class="article-body">
+            <div id="article-body" class="article-body glass-box" style="margin-bottom: 60px;">
                 <!-- İçerik dinamik yüklenecek -->
+                <div class="skeleton" style="height: 20px; width: 100%; margin-bottom: 10px; background: rgba(255,255,255,0.05);"></div>
+                <div class="skeleton" style="height: 20px; width: 90%; margin-bottom: 10px; background: rgba(255,255,255,0.05);"></div>
+                <div class="skeleton" style="height: 20px; width: 95%; margin-bottom: 40px; background: rgba(255,255,255,0.05);"></div>
+            </div>
+            
+            <div class="article-body">
+                <div class="tags" id="article-tags" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 40px;">
+                    <!-- Etiketler dinamik yüklenecek -->
+                </div>
             </div>
 
             <!-- Social Sharing -->
-            <div class="social-share">
-                <h3>Paylaş</h3>
-                <a href="#" class="share-btn share-twitter" id="share-twitter">Twitter'da Paylaş</a>
-                <a href="#" class="share-btn share-facebook" id="share-facebook">Facebook'ta Paylaş</a>
-                <a href="#" class="share-btn share-linkedin" id="share-linkedin">LinkedIn'de Paylaş</a>
-                <a href="#" class="share-btn share-whatsapp" id="share-whatsapp">WhatsApp'ta Paylaş</a>
+            <div class="social-share text-center" style="margin-bottom: 60px;">
+                <h3 style="font-family: var(--font-body); font-size: 1rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">Bu İncelemeyi Paylaş</h3>
+                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-secondary" id="share-twitter">𝕏 Twitter</a>
+                    <a href="#" class="btn btn-secondary" id="share-facebook">Facebook</a>
+                    <a href="#" class="btn btn-secondary" id="share-linkedin">LinkedIn</a>
+                    <a href="#" class="btn btn-secondary" id="share-whatsapp" style="border-color: #25d366; color: #25d366;">WhatsApp</a>
+                </div>
             </div>
         </article>
 
         <!-- Comments Section -->
-        <section class="comments-section">
-            <h2>Yorumlar</h2>
+        <section class="comments-section reveal">
+            <h2 class="text-center section-title">Yorumlar</h2>
             
             <!-- Add Comment Form -->
-            <div class="comment-form">
-                <h3>Yorum Yap</h3>
+            <div class="comment-form glass-box" style="padding: 40px;">
+                <h3 style="margin-bottom: 20px;">Düşüncelerinizi Paylaşın</h3>
                 <form id="comment-form">
                     <input 
                         type="text" 
@@ -72,30 +80,30 @@
                     <input 
                         type="email" 
                         id="comment-email" 
-                        placeholder="E-posta (yayınlanmayacak)" 
+                        placeholder="E-posta (Gizli tutulacaktır)" 
                         required
                         class="form-input"
                     >
                     <textarea 
                         id="comment-text" 
-                        placeholder="Yorumunuzu yazın..." 
+                        placeholder="Düşüncelerinizi buraya yazın..." 
                         rows="5"
                         required
                         class="form-textarea"
                     ></textarea>
-                    <button type="submit" class="btn btn-primary">Yorum Gönder</button>
+                    <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Yorum Gönder</button>
                 </form>
             </div>
 
             <!-- Comments List -->
-            <div class="comments-list" id="comments-list">
+            <div class="comments-list" id="comments-list" style="margin-top: 40px;">
                 <!-- Yorumlar dinamik yüklenecek -->
             </div>
         </section>
 
         <!-- Related Articles -->
-        <section class="related-articles">
-            <h2>İlgili Makaleler</h2>
+        <section class="featured reveal" style="padding-top: 60px;">
+            <h2 class="section-title">İlgini Çekebilir</h2>
             <div class="article-grid" id="related-articles-container">
                 <!-- İlgili makaleler dinamik yüklenecek -->
             </div>
@@ -105,11 +113,18 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Yürüyüş & Bilinç Altı. Tüm hakları saklıdır.</p>
-            <div class="social-links">
-                <a href="#" class="social-icon" title="Twitter">𝕏</a>
-                <a href="#" class="social-icon" title="Facebook">f</a>
-                <a href="#" class="social-icon" title="LinkedIn">in</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Walk<span>Mind</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="LinkedIn">in</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 WalkMind - Bilinçaltı Analiz Platformu. Tüm hakları saklıdır.</p>
+                </div>
             </div>
         </div>
     </footer>

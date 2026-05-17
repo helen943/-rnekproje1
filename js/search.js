@@ -39,9 +39,9 @@ function performSearch(query) {
     
     if (results.length === 0) {
         resultsContainer.innerHTML = `
-            <div class="no-results">
-                <h2>"${query}" için sonuç bulunamadı</h2>
-                <p>Lütfen başka bir terim deneyin.</p>
+            <div class="no-results glass-box" style="width: 100%; text-align: center;">
+                <h2 style="color: var(--text-main);">"${query}" için sonuç bulunamadı</h2>
+                <p style="color: var(--text-muted);">Lütfen başka bir terim deneyin.</p>
             </div>
         `;
         return;
@@ -50,23 +50,28 @@ function performSearch(query) {
     let html = `<h2>"${query}" için ${results.length} sonuç bulundu</h2>`;
     html += '<div class="article-grid">';
     
-    html += results.map(article => `
-        <div class="article-card">
-            <img src="${article.image}" alt="${article.title}">
+    html += results.map((article, index) => `
+        <div class="article-card reveal" style="animation-delay: ${index * 0.1}s">
+            <div class="img-wrapper">
+                <img src="${article.image}" alt="${article.title}">
+            </div>
             <div class="article-card-content">
+                <div class="meta">
+                    <span class="category">${article.category}</span>
+                    <span>${formatDate(article.date)}</span>
+                </div>
                 <h3>${article.title}</h3>
                 <p class="summary">${article.summary}</p>
-                <div class="meta">
-                    <span>${formatDate(article.date)}</span>
-                    <span class="category">${article.category}</span>
-                </div>
-                <a href="article.html?id=${article.id}">Devamını Oku →</a>
+                <a href="article.html?id=${article.id}" class="read-more">Devamını Oku</a>
             </div>
         </div>
     `).join('');
     
     html += '</div>';
     resultsContainer.innerHTML = html;
+    
+    // Trigger reveal for newly added elements
+    setTimeout(() => { if(typeof initRevealAnimations === 'function') initRevealAnimations(); }, 50);
 }
 
 // ==================== INITIALIZE ON PAGE LOAD ====================
