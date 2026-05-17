@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makale - Yürüyüş & Bilinç Altı</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🚶 Yürüyüş & Bilinç Altı</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="blog.html">Makaleler</a></li>
+                <li><a href="search.html">Arama</a></li>
+                <li><a href="about.html">Hakkında</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main class="container">
+        <article id="article-content" class="article-page">
+            <header class="article-header">
+                <h1 id="article-title">Makale Başlığı</h1>
+                <div class="article-meta">
+                    <span class="author" id="article-author">Yazar Adı</span>
+                    <span class="date" id="article-date">01.01.2026</span>
+                    <span class="category" id="article-category">Kategori</span>
+                </div>
+                <div class="tags" id="article-tags">
+                    <!-- Etiketler dinamik yüklenecek -->
+                </div>
+            </header>
+
+            <img id="article-image" src="" alt="Makale kapak" class="article-image">
+
+            <div id="article-body" class="article-body">
+                <!-- İçerik dinamik yüklenecek -->
+            </div>
+
+            <!-- Social Sharing -->
+            <div class="social-share">
+                <h3>Paylaş</h3>
+                <a href="#" class="share-btn share-twitter" id="share-twitter">Twitter'da Paylaş</a>
+                <a href="#" class="share-btn share-facebook" id="share-facebook">Facebook'ta Paylaş</a>
+                <a href="#" class="share-btn share-linkedin" id="share-linkedin">LinkedIn'de Paylaş</a>
+                <a href="#" class="share-btn share-whatsapp" id="share-whatsapp">WhatsApp'ta Paylaş</a>
+            </div>
+        </article>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <h2>Yorumlar</h2>
+            
+            <!-- Add Comment Form -->
+            <div class="comment-form">
+                <h3>Yorum Yap</h3>
+                <form id="comment-form">
+                    <input 
+                        type="text" 
+                        id="comment-name" 
+                        placeholder="Adınız" 
+                        required
+                        class="form-input"
+                    >
+                    <input 
+                        type="email" 
+                        id="comment-email" 
+                        placeholder="E-posta (yayınlanmayacak)" 
+                        required
+                        class="form-input"
+                    >
+                    <textarea 
+                        id="comment-text" 
+                        placeholder="Yorumunuzu yazın..." 
+                        rows="5"
+                        required
+                        class="form-textarea"
+                    ></textarea>
+                    <button type="submit" class="btn btn-primary">Yorum Gönder</button>
+                </form>
+            </div>
+
+            <!-- Comments List -->
+            <div class="comments-list" id="comments-list">
+                <!-- Yorumlar dinamik yüklenecek -->
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="related-articles">
+            <h2>İlgili Makaleler</h2>
+            <div class="article-grid" id="related-articles-container">
+                <!-- İlgili makaleler dinamik yüklenecek -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Yürüyüş & Bilinç Altı. Tüm hakları saklıdır.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                <a href="#" class="social-icon" title="Facebook">f</a>
+                <a href="#" class="social-icon" title="LinkedIn">in</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/comments.js"></script>
+    <script src="js/social.js"></script>
+</body>
+</html>

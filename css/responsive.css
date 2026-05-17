@@ -1,0 +1,375 @@
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* ==================== TABLET (768px) ==================== */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Navigation */
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Article Grid */
+    .article-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    /* Filter Section */
+    .filter-section {
+        flex-direction: column;
+    }
+
+    .search-input {
+        min-width: 100%;
+    }
+
+    .sort-select {
+        min-width: 100%;
+    }
+
+    /* Page Content */
+    .page-content {
+        padding: 30px 20px;
+    }
+
+    /* Article Page */
+    .article-page {
+        padding: 30px 20px;
+    }
+
+    .article-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Social Share */
+    .social-share {
+        padding: 20px;
+    }
+
+    .share-btn {
+        max-width: none;
+        width: 100%;
+    }
+
+    /* Comments */
+    .comments-section {
+        padding: 30px 20px;
+    }
+
+    .comment-form {
+        padding: 20px;
+    }
+
+    /* Search Section */
+    .search-section {
+        flex-direction: column;
+    }
+
+    .search-section .search-input {
+        min-width: 100%;
+    }
+}
+
+/* ==================== MOBILE (576px) ==================== */
+@media (max-width: 576px) {
+    html {
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    /* Navigation */
+    .navbar .logo h1 {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Article Grid */
+    .article-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .article-card img {
+        height: 150px;
+    }
+
+    /* Filter */
+    .filter-section {
+        padding: 0 10px;
+    }
+
+    /* Page Content */
+    .page-content {
+        padding: 20px 10px;
+    }
+
+    .page-content section {
+        margin-bottom: 25px;
+    }
+
+    /* Article */
+    .article-page {
+        padding: 20px 10px;
+    }
+
+    .article-header {
+        padding-bottom: 15px;
+    }
+
+    .article-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .article-meta {
+        font-size: 0.8rem;
+    }
+
+    .article-image {
+        margin-bottom: 20px;
+    }
+
+    .article-body {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    /* Social Share */
+    .social-share {
+        padding: 15px 10px;
+    }
+
+    .social-share h3 {
+        font-size: 1rem;
+    }
+
+    .share-btn {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    /* Comments */
+    .comments-section {
+        padding: 20px 10px;
+    }
+
+    .comment-form {
+        padding: 15px 10px;
+    }
+
+    .comment {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Search */
+    .search-section {
+        padding: 20px 10px;
+    }
+
+    /* Pagination */
+    .pagination {
+        gap: 5px;
+    }
+
+    .pagination a,
+    .pagination span {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+
+    /* About Preview */
+    .about-preview {
+        padding: 30px 15px;
+    }
+
+    .about-preview h2 {
+        font-size: 1.3rem;
+    }
+
+    .about-preview p {
+        font-size: 0.95rem;
+    }
+
+    /* Related Articles */
+    .related-articles {
+        padding: 20px 10px;
+    }
+}
+
+/* ==================== EXTRA SMALL (320px) ==================== */
+@media (max-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .nav-links {
+        gap: 5px;
+        font-size: 0.7rem;
+    }
+
+    .article-meta {
+        font-size: 0.7rem;
+        gap: 10px;
+    }
+
+    .share-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .pagination a,
+    .pagination span {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+}
+
+/* ==================== DESKTOP (1200px+) ==================== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .article-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==================== PRINT ==================== */
+@media print {
+    .navbar,
+    .footer,
+    .social-share,
+    .filter-section,
+    .pagination,
+    .comments-section,
+    .related-articles {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .article-page {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
